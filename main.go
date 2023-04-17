@@ -11,6 +11,10 @@ import (
 )
 
 func main() {
+  if len(os.Args) != 3 {
+    fmt.Println("Usage: ./main.go <file path> <sha256 hash>")
+    os.Exit(1)
+  }
   f, err := os.Open(os.Args[1])
   if err != nil {
     log.Fatal(err)
